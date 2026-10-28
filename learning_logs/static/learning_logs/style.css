@@ -1,0 +1,254 @@
+
+/* Learning Log — голубой Y2K */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px;
+    color: #315b88;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+
+    background-color: #edf5ff;
+    background-image:
+        linear-gradient(45deg, #d5e6fa 25%, transparent 25%),
+        linear-gradient(-45deg, #d5e6fa 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #d5e6fa 75%),
+        linear-gradient(-45deg, transparent 75%, #d5e6fa 75%);
+    background-size: 24px 24px;
+    background-position:
+        0 0, 0 12px, 12px -12px, -12px 0;
+}
+
+body > h1,
+body > p,
+body > h2,
+body > ul,
+body > form,
+body > div {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body > h1 {
+    padding: 22px;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(#a8d3ff, #659fe5);
+    border: 3px solid #ffffff;
+    outline: 2px solid #7daee6;
+    border-radius: 12px;
+    text-shadow: 2px 2px #477ebd;
+}
+
+body > h2 {
+    margin-top: 25px;
+    padding: 8px 14px;
+    color: #3976b8;
+    background: #dcecff;
+    border: 2px solid #a5c9f3;
+    border-radius: 8px;
+}
+
+body > p,
+body > ul,
+body > form,
+body > div {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 2px solid #b7d5f7;
+    border-radius: 8px;
+}
+
+a {
+    color: #397bc1;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #174c88;
+    text-decoration: underline;
+}
+
+li {
+    margin: 7px 0;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    color: #315b88;
+    background: #fafdff;
+    border: 2px solid #a5c9f3;
+    border-radius: 8px;
+    font: inherit;
+}
+
+textarea:focus {
+    outline: 2px solid #75a9e8;
+}
+
+button {
+    padding: 10px 20px;
+    color: white;
+    background: linear-gradient(#9bcaff, #4f91dc);
+    border: 2px solid white;
+    outline: 1px solid #6499d4;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(#78b5f5, #3478c4);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    body > h1 {
+        padding: 14px 8px;
+        font-size: 24px;
+    }
+}
+.site-banner {
+    max-width: 760px;
+    margin: 0 auto 20px;
+    padding: 6px;
+    background: #ffffff;
+    border: 2px solid #8bbcf0;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px #d4e8ff;
+    overflow: hidden;
+}
+
+.site-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.gif-divider {
+    max-width: 760px;
+    margin: 25px auto 10px;
+    text-align: center;
+}
+
+.gif-divider img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+.gif-divider {
+    max-width: 760px;
+    margin: 25px auto 10px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.gif-divider img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+/* Гифки в левом боку — ретро-украшения */
+
+.left-gifs {
+    position: fixed;
+    left: 12px;
+    top: 150px;
+    width: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+}
+
+.left-gifs img {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* На маленьких экранах прячем украшения,
+   чтобы они не мешали читать сайт */
+@media (max-width: 800px) {
+    
+.left-gifs {
+    position: fixed;
+    left: 12px;
+    top: 150px;
+    z-index: 10;
+
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+}
+/* Гифки в правом боку */
+
+.right-gifs {
+    position: fixed;
+    right: 12px;
+    top: 150px;
+    z-index: 10;
+
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.right-gifs img {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+}
+

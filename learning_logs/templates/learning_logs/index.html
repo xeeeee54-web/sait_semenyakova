@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'learning_logs/style.css' %}">
+    <title>Learning Log</title>
+</head>
+<body>
+<div class="left-gifs">
+    <img
+        src="https://img.glittergfx.com/sparkles/guy-thing/2Gb2-flamin-skull.gif"
+        alt="Пылающий череп"
+    >
+    <img
+        src="https://img.glittergfx.com/sparkles/guy-thing/3ece-knight-in-shining-armor.gif"
+        alt="Рыцарь в сияющих доспехах"
+    >
+    <img
+        src="https://img.glittergfx.com/sparkles/guy-thing/2RCm-boy-skull-with-hat.gif"
+        alt="Череп в шляпе"
+    >
+</div>
+<div class="right-gifs">
+    <img
+        src="https://img.glittergfx.com/sparkles/guy-thing/Z7C-girl-blue.gif"
+        alt="Девушка в голубом"
+    >
+    <img
+        src="https://img.glittergfx.com/sparkles/guy-thing/34dO-renaissance-man.gif"
+        alt="Мужчина в стиле Ренессанса"
+    >
+    <img
+        src="https://img.glittergfx.com/sparkles/guy-thing/5XEe-boss.gif"
+        alt="Босс"
+    >
+</div>
+
+<div class="site-banner">
+    <img src="{% static 'learning_logs/5opka.jfif' %}" alt="Пятёрка">
+</div>
+    <h1>Learning Log</h1>
+
+    <p>Добро пожаловать в мой журнал обучения!</p>
+    <p>Здесь я буду записывать всё, что изучаю.</p>
+
+    <h2>Мои темы</h2>
+
+    <ul>
+        {% for topic in topics %}
+            <li>
+                <a href="{% url 'topic' topic.id %}">{{ topic.text }}</a>
+            </li>
+        {% empty %}
+            <li>Пока тем нет.</li>
+        {% endfor %}
+    </ul>
+<div class="gif-divider">
+    <img
+        src="https://dl8.glitter-graphics.net/pub/229/229248abu3e9v4w9.gif"
+        alt="Голубой блестящий разделитель"
+        width="400"
+        height="35"
+    >
+</div>
+</body>
+</html>

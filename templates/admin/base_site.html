@@ -1,0 +1,129 @@
+
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <style>
+        /* Голубой Y2K-фон */
+        body.login {
+            background: #eaf5ff;
+            background-image:
+                radial-gradient(circle, #ffffff 1.5px, transparent 2px),
+                linear-gradient(135deg, #eaf5ff, #c5e3ff);
+            background-size: 22px 22px, 100% 100%;
+            color: #315b88;
+        }
+
+        /* Заголовок страницы */
+        #header {
+            background: linear-gradient(90deg, #9bcaff, #659fe5);
+            color: white;
+        }
+
+        #header a:link,
+        #header a:visited {
+            color: white;
+        }
+
+        /* Форма входа */
+        body.login #content-main {
+            background: rgba(255, 255, 255, 0.88);
+            border: 2px solid #b7d5f7;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 5px 20px rgba(75, 130, 190, 0.15);
+        }
+
+        body.login #content-main::before {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 80px;
+            max-width: 100%;
+            margin: 0 auto 20px;
+            background-image: url("{% static 'learning_logs/admin-banner.gif' %}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        body.login input[type="text"],
+        body.login input[type="password"] {
+            border: 2px solid #a5c9f3;
+            border-radius: 8px;
+            background: #fafdff;
+            color: #315b88;
+            padding: 8px;
+        }
+
+        body.login input:focus {
+            outline: 2px solid #75a9e8;
+        }
+
+        body.login .submit-row input {
+            background: linear-gradient(#9bcaff, #4f91dc);
+            border: 1px solid #4f91dc;
+            border-radius: 18px;
+            padding: 8px 22px;
+            color: white;
+            font-weight: bold;
+        }
+        body.login #content-main::after {
+            content: "";
+            display: block;
+            width: 250px;
+            height: 60px;
+            max-width: 100%;
+            margin: 25px auto 0;
+            background-image: url("https://img.glittergfx.com/dividers/animals/j5D-butterfly.gif");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            border: none;
+            box-shadow: none;
+        }
+
+        /* Картинки в рамках по бокам */
+
+        body.login::before,
+        body.login::after {
+            content: "";
+            position: fixed;
+            width: 360px;
+            height: 480px;
+            top: 120px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border: 4px solid #ffffff;
+            outline: 2px solid #8bbcf0;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(75, 130, 190, 0.25);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Картинка слева */
+        body.login::before {
+            left: 20px;
+            background-image: url("https://i.pinimg.com/736x/d3/3b/3f/d33b3ff6efd324fba36780e38dd74c59.jpg");
+        }
+
+        /* Картинка справа */
+        body.login::after {
+            right: 20px;
+            background-image: url("https://i.pinimg.com/736x/1f/86/13/1f861376562693177746238370ab64e2.jpg");
+        }
+
+        /* Скрываем картинки на узких экранах */
+        @media (max-width: 900px) {
+            body.login::before,
+            body.login::after {
+                display: none;
+            }
+        }
+
+
+    </style>
+{% endblock %}
