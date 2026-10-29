@@ -1,0 +1,8 @@
+ll_env/
+.env
+.git
+db.sqlite3
+__pycache__/
+*.pyc
+staticfiles/
+.idea/

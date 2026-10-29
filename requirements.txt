@@ -1,0 +1,4 @@
+Django>=6.1,<6.2
+gunicorn
+whitenoise
+django-bootstrap4
